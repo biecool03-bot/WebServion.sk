@@ -1,298 +1,202 @@
-/* reset */
+/* ---------- RESET ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* base */
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: #0e1a2b;
+  background-color: #121212;
+  color: #d3d3d3;
   line-height: 1.6;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* NAV */
+/* ---------- NAVBAR ---------- */
 .navbar {
-  background: rgba(14, 26, 43, 0.95);
-  padding: 14px 0;
-  position: fixed;
-  width: 100%;
+  background-color: #1f1f1f;
+  padding: 15px 0;
+  position: sticky;
   top: 0;
-  z-index: 100;
-  backdrop-filter: blur(4px);
+  z-index: 1000;
 }
 
-.nav-inner {
+.navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-size: 1.4rem;
+.navbar .logo {
+  font-size: 1.8rem;
   font-weight: 600;
+  color: #fff;
 }
-.logo span {
-  color: #00c9a7;
+
+.navbar .logo span {
+  color: #00bfa5;
 }
 
 .navbar nav ul {
-  list-style: none;
   display: flex;
-  gap: 28px;
-  align-items: center;
+  list-style: none;
 }
 
-.navbar a {
+.navbar nav ul li {
+  margin-left: 25px;
+}
+
+.navbar nav ul li a {
+  color: #d3d3d3;
   text-decoration: none;
-  color: #fff;
   font-weight: 500;
-  transition: color 0.25s;
-  padding: 8px 0;
+  transition: color 0.3s;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #00c9a7;
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+  color: #00bfa5;
 }
 
-/* body top padding to compensate fixed header */
-main, footer {
-  padding-top: 80px;
-}
-
-/* HERO */
-.hero {
-  height: 85vh;
-  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+/* ---------- HERO / PAGE HEADER ---------- */
+.hero, .page-header {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-align: center;
+  padding: 0 20px;
 }
 
-.hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(14, 26, 43, 0.65);
+.hero .hero-content, .page-header .page-header-content {
+  color: #fff;
+  max-width: 700px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 20px;
+.hero h1, .page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.hero-content h1 {
-  font-size: 2.6rem;
-  margin-bottom: 18px;
+.hero p, .page-header p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-.hero-content p {
-  font-size: 1.05rem;
-  margin-bottom: 24px;
-}
-
-/* buttons */
 .btn {
   display: inline-block;
-  background: #00c9a7;
+  background-color: #00bfa5;
   color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.18s, background 0.18s;
-  border: none;
-  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  background-color: #009e8f;
 }
 
-/* intro cards on index */
-.intro {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 60px 0;
+/* ---------- INTRO / ABOUT / SERVICES ---------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
 }
 
-.intro-card {
-  background: rgba(255,255,255,0.03);
-  padding: 28px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-.intro-card h3 {
-  color: #00c9a7;
-  margin-bottom: 12px;
-}
-
-/* PAGE HEADER (pre kontakty, služby, o nás) */
-.page-header {
-  height: 45vh;
-  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+.intro, .services {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.page-header .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(14, 26, 43, 0.6);
+.intro-card, .service-card, .contact-card, .about-text {
+  background-color: #1f1f1f;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  flex: 1 1 30%;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.page-header-content {
-  position: relative;
-  z-index: 2;
+.intro-card:hover, .service-card:hover, .contact-card:hover, .about-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+h2, h3 {
   color: #fff;
+  margin-bottom: 15px;
 }
 
-/* ABOUT */
-.about {
+/* ---------- CONTACT FORM ---------- */
+.contact-card form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 60px 0;
-}
-
-.about-text {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 26px;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.about-text h2 {
-  color: #00c9a7;
-  margin-bottom: 10px;
-}
-
-/* SERVICES */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  padding: 60px 0;
-}
-
-.service-card {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 26px;
-  border-radius: 10px;
-  text-align: left;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(0,0,0,0.32);
-}
-
-.service-card h2 {
-  color: #00c9a7;
-  margin-bottom: 10px;
-}
-
-/* CONTACT */
-.contact {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 30px;
-  padding: 60px 0;
-  align-items: start;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.03);
-  padding: 26px;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.contact-card h2 {
-  color: #00c9a7;
-  margin-bottom: 12px;
-  font-size: 1.4rem;
 }
 
 .contact-card label {
-  display: block;
-  margin-top: 12px;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-  color: #d7e6ea;
+  margin: 10px 0 5px;
 }
 
-.contact-card input[type="text"],
-.contact-card input[type="email"],
-.contact-card textarea {
-  width: 100%;
-  padding: 12px 14px;
+.contact-card input, .contact-card textarea {
+  padding: 10px;
+  border: none;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(255,255,255,0.02);
+  background-color: #2a2a2a;
   color: #fff;
-  outline: none;
-  font-size: 0.95rem;
+  margin-bottom: 15px;
 }
 
-.contact-card textarea {
-  resize: vertical;
+.contact-card input::placeholder, .contact-card textarea::placeholder {
+  color: #aaa;
 }
 
 .contact-info {
-  background: rgba(255,255,255,0.03);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  margin-top: 25px;
+  padding: 25px;
+  background-color: #1f1f1f;
+  border-radius: 12px;
 }
 
-.contact-info h3 {
-  color: #00c9a7;
-  margin-bottom: 12px;
-}
-
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 footer {
-  background: #0b1420;
+  background-color: #1f1f1f;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
+  margin-top: 50px;
   font-size: 0.9rem;
-  margin-top: 40px;
+  color: #777;
 }
 
-/* responsive */
-@media (max-width: 880px) {
-  .page-header { height: 35vh; }
-  .hero-content h1 { font-size: 1.9rem; }
-  .contact { grid-template-columns: 1fr; }
-  main, footer { padding-top: 100px; }
-  .navbar nav ul { gap: 16px; }
-  .intro { grid-template-columns: 1fr; }
+/* ---------- MEDIA QUERIES ---------- */
+@media(max-width: 900px){
+  .intro-card, .service-card, .about-text {
+    flex: 1 1 45%;
+  }
 }
 
-@media (max-width: 480px) {
-  .hero { height: 60vh; }
-  .hero-content h1 { font-size: 1.6rem; }
-  .nav-inner { gap: 12px; }
-  .navbar { padding: 10px 0; }
+@media(max-width: 600px){
+  .navbar nav ul {
+    flex-direction: column;
+  }
+  .navbar nav ul li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .intro-card, .service-card, .about-text {
+    flex: 1 1 100%;
+  }
+
+  .hero h1, .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .hero p, .page-header p {
+    font-size: 1rem;
+  }
 }
