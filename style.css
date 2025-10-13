@@ -1,0 +1,298 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* base */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #0e1a2b;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* NAV */
+.navbar {
+  background: rgba(14, 26, 43, 0.95);
+  padding: 14px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.logo span {
+  color: #00c9a7;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.25s;
+  padding: 8px 0;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00c9a7;
+}
+
+/* body top padding to compensate fixed header */
+main, footer {
+  padding-top: 80px;
+}
+
+/* HERO */
+.hero {
+  height: 85vh;
+  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 26, 43, 0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  background: #00c9a7;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.18s, background 0.18s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* intro cards on index */
+.intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 60px 0;
+}
+
+.intro-card {
+  background: rgba(255,255,255,0.03);
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.intro-card h3 {
+  color: #00c9a7;
+  margin-bottom: 12px;
+}
+
+/* PAGE HEADER (pre kontakty, služby, o nás) */
+.page-header {
+  height: 45vh;
+  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.page-header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 26, 43, 0.6);
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 0;
+}
+
+.about-text {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 26px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.about-text h2 {
+  color: #00c9a7;
+  margin-bottom: 10px;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 60px 0;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 26px;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.32);
+}
+
+.service-card h2 {
+  color: #00c9a7;
+  margin-bottom: 10px;
+}
+
+/* CONTACT */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  padding: 60px 0;
+  align-items: start;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.03);
+  padding: 26px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.contact-card h2 {
+  color: #00c9a7;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.contact-card label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #d7e6ea;
+}
+
+.contact-card input[type="text"],
+.contact-card input[type="email"],
+.contact-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.contact-card textarea {
+  resize: vertical;
+}
+
+.contact-info {
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.contact-info h3 {
+  color: #00c9a7;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+footer {
+  background: #0b1420;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* responsive */
+@media (max-width: 880px) {
+  .page-header { height: 35vh; }
+  .hero-content h1 { font-size: 1.9rem; }
+  .contact { grid-template-columns: 1fr; }
+  main, footer { padding-top: 100px; }
+  .navbar nav ul { gap: 16px; }
+  .intro { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero { height: 60vh; }
+  .hero-content h1 { font-size: 1.6rem; }
+  .nav-inner { gap: 12px; }
+  .navbar { padding: 10px 0; }
+}
